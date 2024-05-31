@@ -41,9 +41,9 @@
     }
        function getSelectedButton() {
         const selectedValue = document.querySelector('input[name="buttonSelect"]:checked').value;
-        if (selectedValue === 'button1') {
+        if (selectedValue === 'button2') {
             return document.querySelector('button.scaleui.inline-flex.items-center.rounded.border-0.font-medium.shadow-sm.focus\\:outline-none.focus\\:ring-2.focus\\:ring-offset-2.transition-all.px-2\\.5.h-7.text-xs.text-danger-800.bg-danger-100.hover\\:bg-danger-200.focus\\:ring-danger-100'); // Selector for "Send Back To Queue"
-        } else if (selectedValue === 'button2') {
+        } else if (selectedValue === 'button1') {
             return document.querySelector('button.scaleui.inline-flex.items-center.rounded.border-0.font-medium.shadow-sm.focus\\:outline-none.focus\\:ring-2.focus\\:ring-offset-2.transition-all.px-2\\.5.h-7.text-xs.text-success-800.bg-success-100.hover\\:bg-success-200.focus\\:ring-success-100'); // Selector for "Approve With Changes"
         } else {
             return null;
@@ -99,11 +99,12 @@
 
             // Set a timeout to click the button at the target time, reduced by 1 minute
             setTimeout(() => {
-                  playSound();
+                 
                 const button = getSelectedButton();
                 if (button) {
                     button.click();
                     console.log('Button clicked');
+                     playSound();
 
                 } else {
                     console.log('Button not found');
